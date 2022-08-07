@@ -18,7 +18,7 @@ class multifilter:
         self.funcs = funcs
 
     def __iter__(self):
-        list_ = []
+        # list_ = []
         for elem in self.iterable:
             pos = 0
             neg = 0
@@ -29,5 +29,6 @@ class multifilter:
                     neg += 1
 
             if self.judge(pos, neg) is True:
-                list_.append(elem)
-        return iter(list_)
+                yield elem
+        #         list_.append(elem)
+        # return iter(list_)
